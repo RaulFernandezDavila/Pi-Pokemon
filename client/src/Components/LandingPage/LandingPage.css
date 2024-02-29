@@ -1,0 +1,32 @@
+ 
+
+.LandingPage{
+   display: flex;
+   flex-direction: column;
+   background-image: url("https://www.egames.news/__export/1638809435218/sites/debate/img/2021/12/06/cxmo_conseguir_a_charmanderx_charmeleonx_charizard_en_pokxmon_diamante_brillante_y_perla_reluciente.jpg_172596871.jpg");   
+   background-size:100% 100%;
+   background-position:center;
+   background-repeat:no-repeat;	
+   background-attachment: fixed;
+   height: 100vh;
+   
+}
+.buttonImage{
+   border-radius: 99rem;
+   background-color: rgb(207, 182, 149);
+   margin-top: 10rem;
+   width: 90px;
+   height: 90px;
+    
+}
+.createdBy{
+   height: 60px;
+   width: 450px;
+   display: flex;
+   margin-top: 200px;
+   justify-content: center;
+   margin-left: 34rem;
+}
+.tittle{
+   margin-top: 1rem;
+}
