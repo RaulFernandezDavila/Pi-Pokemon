@@ -59,7 +59,8 @@ const validate = (value, pokemon) => {
     }
     if (value.types) {
       if (!value.types.length || value.types.length > 2)
-        errors.types = "You need at least 1 type";
+        errors.types = "You need at least 1 type and maximum 2 types";
+      
       else {
         errors.types = false;
       }

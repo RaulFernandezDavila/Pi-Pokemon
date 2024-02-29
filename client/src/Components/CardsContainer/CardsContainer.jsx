@@ -39,7 +39,7 @@ function CardsContainer() {
   return (
     <div>
       <div>
-        {/* <div className='navBarContainer' ></div> */}
+        
         <div className='navBar' >
         <Link to={"/create"}> <button className='createPokemon' >CREATE NEW POKEMON</button></Link>
         <Filter setCurrentPage={setCurrentPage} className= "filter" />

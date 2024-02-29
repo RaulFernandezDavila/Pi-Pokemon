@@ -51,9 +51,9 @@ const rootReducer = (state = initialState, action) => {
                     return false;
                 }
             } else {
-                if (el.pokeTypes) { // Verificar si el array pokeTypes está definido
+                if (el.pokeTypes) { 
                     const acum = el.pokeTypes.filter((t) => t.name === action.payload);
-                    if (acum && acum.length > 0) { // Verificar si acum tiene elementos
+                    if (acum && acum.length > 0) { 
                         return true;
                     } else {
                         return false;
@@ -166,7 +166,7 @@ const rootReducer = (state = initialState, action) => {
 
       if (action.payload === "created") {
         const createdPokes = state.allPokemons?.filter((poke) => typeof poke.id === "string");
-        // console.log(createdPokes);
+        //console.log(createdPokes);
         return {
           ...state,
           pokemons: createdPokes,

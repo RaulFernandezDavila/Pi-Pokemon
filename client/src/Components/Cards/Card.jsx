@@ -4,7 +4,7 @@ import "./cards.css"
 
 
 const Cards = (props)=>{
-    // console.log(props);
+// console.log(props);
     return(
         <div className="card">
         <h3 className="name">{props.name.toUpperCase()}</h3>

@@ -17,7 +17,7 @@ const Detail = (props) => {
   const handleClick = (e) => {
     dispatch(clearDetail());
   };
- console.log(pokemon);
+ 
   return (
     <div className="fondo">
       <Link to={"/home"}>

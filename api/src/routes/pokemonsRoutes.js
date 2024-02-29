@@ -40,22 +40,7 @@ router.get("/:id",async (req,res)=>{
   }catch (error) {res.status(400).json({error : error.message })}
   });
 
-// router.get("/name?=", async(req,res)=>{
-//     try {
-//       const { name } = req.query
-//       const pokemonsList = await allPokemon();
-//       if(name){
-//          const pokeSelect = await pokemonsList.filter((poke)=> poke.name === name.toLowerCase() )
-//          if(pokeSelect.length > 0){
-//             res.status(200).json(pokeSelect)
-//          }else{
-//             res.status(404).send("Not found")
-//          }
-//               }
-//     } catch (error) {
-//       res.status(400).send("Error to conect to Controllers")
-//     }
-// })
+
 router.post("/", async (req,res)=>{
    try {
       await newPokemon(req.body);

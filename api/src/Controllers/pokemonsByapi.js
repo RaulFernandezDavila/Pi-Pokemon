@@ -31,9 +31,5 @@ const pokeapi = async ()=>{
 }
 
 
-// const prueba = async ()=>{
-//     let pokemon = await pokeapi()
-//     console.log(pokemon);
-// }
-// prueba()
+
 module.exports={pokeapi};

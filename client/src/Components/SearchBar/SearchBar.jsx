@@ -34,7 +34,7 @@ function SearchBar({setCurrentPage}) {
                 <input
                     className='input'
                     onChange={handlerChange}
-                    type="text"
+                    type="search"
                     value={input}
                     placeholder="Search pokemon..."
                     onClick={() => setInput('')}
