@@ -18,7 +18,8 @@ const allTypes = async () => {
         },
       });
     });
-  return dtbase
+  return 
+  
   } catch (error) {
     console.log({error: "No types available on Data Base"});
   }

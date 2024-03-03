@@ -12,6 +12,7 @@ const CreatePokemon = () => {
   const types = useSelector((state) => state.pokeTypes);
   const pokemon = useSelector((state) => state.allPokemon);
   const history = useHistory();
+  console.log(types);
 
   const [error, setError] = useState({
     name: "",
@@ -128,7 +129,7 @@ const CreatePokemon = () => {
     dispatch(getTypes());
   }, []);
 
-  console.log(input.types);
+  //console.log(input.types);
   return (
     <div className="containerForm">
       <Link to={"/home"}>

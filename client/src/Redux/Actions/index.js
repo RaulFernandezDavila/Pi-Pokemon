@@ -7,6 +7,7 @@ export const getPokemon = () => {
     return async function (dispatch) {
       
         const pokemon = await axios.get("http://localhost:3001/pokemons");
+        //console.log(pokemon.data);
         return dispatch({
           type: "GET_POKEMON",
           payload: pokemon.data,
@@ -14,6 +15,7 @@ export const getPokemon = () => {
 
     };
   };
+  
   
   export function  getPokemonDetail (id) {
      return async function (dispatch) {
@@ -64,15 +66,20 @@ export const getPokemon = () => {
     return async (dispatch) => {
       try {
         const types = await axios.get("http://localhost:3001/types");
+        console.log("Tipos recibidos:", types.data);
+        
         return dispatch({
           type: "GET_TYPES",
           payload: types.data,
+          
         });
       } catch (e) {
         console.log(e);
       }
     };
+   
   };
+  
   export const filterByCreate =(payload) => {
       return{
         type: "FILTER_BY_CREATE",
