@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux"
 import Cards from "../Cards/Card"
-import { getPokemon } from '../../Redux/Actions';
+import { getPokemon,getTypes } from '../../Redux/Actions';
 import { Link } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
 import Loading from '../Loading/Loading';
@@ -11,7 +11,10 @@ import "./CardsContainer.css"
 function CardsContainer() {
   const pokemons = useSelector(state => state.pokemons)
   const dispatch = useDispatch()
-  useEffect(() => { dispatch(getPokemon()) }, [])
+  useEffect(() => { 
+    dispatch(getPokemon());
+    dispatch(getTypes());
+  }, []);
   const [currentPage, setCurrentPage] = useState(0);
   const cardsPerPage = 12;
 

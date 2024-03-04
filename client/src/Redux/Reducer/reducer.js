@@ -42,34 +42,45 @@ const rootReducer = (state = initialState, action) => {
         if (action.payload === "all") {
             return { ...state, pokemons: state.allPokemons };
         }
-        
+
         const typeSelected = state.allPokemons?.filter((el) => {
-            if (!el.createdInDb) {
-                if (el.types[0] === action.payload || el.types[1] === action.payload) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                if (el.pokeTypes) { 
-                    const acum = el.pokeTypes.filter((t) => t.name === action.payload);
-                    if (acum && acum.length > 0) { 
-                        return true;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
+
+            // if (!el.createdInDb) {
+            //     if (el.types[0] === action.payload  el.types[1] === action.payload) {
+            //         return true;
+            //     } else {
+            //         return false;
+            //     }
+            // } else {
+            //     if (el.createdInDb) {
+            //       const pokesFromDB = state.allPokemons?.filter((el) => el.createdInDb);
+            //       const filtered = pokesFromDB.map((element) => {
+            //         if(element.types[0] == action.payload  element.types[1] == action.payload){
+            //           console.log(element);
+            //           return element;
+            //         } else {
+            //           return false
+            //         }
+            //       });
+
+            //     } else {
+            //         return false;
+            //     }
+            // }
+            if (el.types[0] == action.payload || el.types[1] == action.payload){
+              return el;
             }
         });
-    
+
+
         const results = typeSelected.filter((pk) => state.allPokemons.includes(pk));
-    
+        console.log(results);
+
         return {
             ...state,
             pokemons: results,
         };
+        
     case "ORDER_BY_NAME":
       if (action.payload === "asc") {
         let poke = state.pokemons?.slice();

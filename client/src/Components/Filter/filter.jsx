@@ -7,6 +7,7 @@ import "./Filter.css"
 function Filter({ setCurrentPage }) {
     const dispatch = useDispatch()
     const pokemons = useSelector((state) => state.pokemons)
+    const types = useSelector((state) => state.pokeTypes);
 
     const clearFilters =()=>{
         dispatch(clearHome())
@@ -52,16 +53,10 @@ function Filter({ setCurrentPage }) {
             </select>
             <select  onChange={handleType} className="filterButton">
                 <option value="all">All </option>
-                <option value="fire">Fire</option>
-                <option value="normal">Normal</option>
-                <option value="ground">Ground</option>
-                <option value="fairy">Fairy</option>
-                <option value="electric">Electric</option>
-                <option value="grass">Grass</option>
-                <option value="poison">Poison</option>
-                <option value="flying">Flying</option>
-                <option value="water">Water</option>
-                <option value="bug">Bug</option>
+                {types?.map((element) => {
+                    return <option value = {element.name} key = {element.id}>{element.name}</option>
+                })}
+                
             </select>
         </div>
 
