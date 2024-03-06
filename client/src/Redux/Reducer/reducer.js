@@ -45,28 +45,6 @@ const rootReducer = (state = initialState, action) => {
 
         const typeSelected = state.allPokemons?.filter((el) => {
 
-            // if (!el.createdInDb) {
-            //     if (el.types[0] === action.payload  el.types[1] === action.payload) {
-            //         return true;
-            //     } else {
-            //         return false;
-            //     }
-            // } else {
-            //     if (el.createdInDb) {
-            //       const pokesFromDB = state.allPokemons?.filter((el) => el.createdInDb);
-            //       const filtered = pokesFromDB.map((element) => {
-            //         if(element.types[0] == action.payload  element.types[1] == action.payload){
-            //           console.log(element);
-            //           return element;
-            //         } else {
-            //           return false
-            //         }
-            //       });
-
-            //     } else {
-            //         return false;
-            //     }
-            // }
             if (el.types[0] == action.payload || el.types[1] == action.payload){
               return el;
             }
